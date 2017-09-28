@@ -56,7 +56,7 @@ public abstract class Main {
 
             for(boolean done = false; !done;) {
                 try{
-                    Thread.currentThread().sleep(20);
+                    Thread.sleep(20);
                     if(!(done = run(new Scanner(input))))
                         System.err.println(errorMessage);
                 } catch (Exception e){
