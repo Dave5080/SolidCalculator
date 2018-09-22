@@ -1,7 +1,6 @@
 package io.github.dave5080.figure;
 
 import io.github.dave5080.InputHandler;
-import io.github.dave5080.Main;
 
 import java.util.Scanner;
 
