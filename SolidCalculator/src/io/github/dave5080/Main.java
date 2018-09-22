@@ -13,7 +13,7 @@ public abstract class Main {
 
         boolean repeat;
         do {
-            new InputHandler(System.in, "\nValore non valido!\n") {
+            new InputHandler(System.in, System.err,"\nValore non valido!\n") {
                 @Override
                 public boolean run(Scanner scan) throws Exception {
                     Arrays.asList(AbstractFigure.Solid.values()).forEach(solid -> System.out.printf("%s ", solid.name()));

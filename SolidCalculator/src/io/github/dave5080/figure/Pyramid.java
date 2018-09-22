@@ -28,7 +28,7 @@ public class Pyramid extends AbstractFigure{
 
     @Override
     public void scanForInfo(Scanner input) {
-        new InputHandler(System.in, "\nValore non valido\n") {
+        new InputHandler(System.in, System.err, "\nValore non valido\n") {
             @Override
             public boolean run(Scanner scan) throws Exception {
                 Arrays.stream(Shapes.values())

@@ -26,7 +26,7 @@ public class Sphere extends AbstractFigure{
 
     @Override
     public void scanForInfo(Scanner scan) {
-        new InputHandler(System.in, "\nValore non valido!\n") {
+        new InputHandler(System.in, System.err,"\nValore non valido!\n") {
             @Override
             public boolean run(Scanner scan) throws Exception {
                 range = readValue(scan, "Inserire il raggio: ");

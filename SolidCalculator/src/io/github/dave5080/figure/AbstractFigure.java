@@ -68,7 +68,7 @@ public abstract class AbstractFigure {
 
             @Override
             public void getInfo(Scanner scan) {
-                new InputHandler(System.in, "\nValore non valido!\n") {
+                new InputHandler(System.in, System.err, "\nValore non valido!\n") {
                     @Override
                     public boolean run(Scanner scan) throws Exception {
                         base = readValue(scan, "Inserire la base: ");
@@ -98,7 +98,7 @@ public abstract class AbstractFigure {
 
             @Override
             public void getInfo(Scanner scan) {
-                new InputHandler(System.in, "\nRaggio non valido\n") {
+                new InputHandler(System.in, System.err, "\nRaggio non valido\n") {
                     @Override
                     public boolean run(Scanner scan) throws Exception {
                         range = readValue(scan, "Inserire il raggio: ");
@@ -130,7 +130,7 @@ public abstract class AbstractFigure {
 
             @Override
             public void getInfo(Scanner scan) {
-                new InputHandler(System.in, "\nValore non valido!\n") {
+                new InputHandler(System.in, System.err, "\nValore non valido!\n") {
                     @Override
                     public boolean run(Scanner scan) throws Exception {
                         System.out.print("Inserire il numero di lati: ");
