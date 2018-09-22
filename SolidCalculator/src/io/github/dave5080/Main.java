@@ -12,6 +12,7 @@ public abstract class Main {
 
     @SuppressWarnings("SpellCheckingInspection")
     public static void main(String... args) {
+
         boolean repeat;
         do {
             new Main(System.in, "\nValore non valido!\n") {
