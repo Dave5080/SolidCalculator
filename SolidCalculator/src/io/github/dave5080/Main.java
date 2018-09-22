@@ -3,7 +3,6 @@ package io.github.dave5080;
 import io.github.dave5080.figure.AbstractFigure;
 import io.github.dave5080.figure.Sphere;
 
-import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
@@ -12,7 +11,7 @@ import java.util.Scanner;
 public abstract class Main {
 
     @SuppressWarnings("SpellCheckingInspection")
-    public static void main(String... args) throws IOException {
+    public static void main(String... args) {
         boolean repeat;
         do {
             new Main(System.in, "\nValore non valido!\n") {
