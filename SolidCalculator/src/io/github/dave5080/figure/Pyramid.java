@@ -1,10 +1,11 @@
 package io.github.dave5080.figure;
 
-import io.github.dave5080.Main;
+import io.github.dave5080.InputHandler;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class Pyramid extends AbstractFigure{
 
     private double height;
@@ -27,7 +28,7 @@ public class Pyramid extends AbstractFigure{
 
     @Override
     public void scanForInfo(Scanner input) {
-        new Main(System.in, "\nValore non valido\n") {
+        new InputHandler(System.in, "\nValore non valido\n") {
             @Override
             public boolean run(Scanner scan) throws Exception {
                 Arrays.stream(Shapes.values())

@@ -1,10 +1,11 @@
 package io.github.dave5080.figure;
 
-import io.github.dave5080.Main;
+import io.github.dave5080.InputHandler;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class Prism extends AbstractFigure{
 
     private double height;
@@ -28,7 +29,7 @@ public class Prism extends AbstractFigure{
 
     @Override
     public void scanForInfo(Scanner scan) {
-        new Main(System.in, "\nValore non valido\n") {
+        new InputHandler(System.in, "\nValore non valido\n") {
             @Override
             public boolean run(Scanner scan) throws Exception {
                 Arrays.asList(AbstractFigure.Shapes.values()).forEach(figure -> System.out.printf("%s ",figure.name()));

@@ -3,8 +3,6 @@ package io.github.dave5080;
 import io.github.dave5080.figure.AbstractFigure;
 import io.github.dave5080.figure.Sphere;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -15,7 +13,7 @@ public abstract class Main {
 
         boolean repeat;
         do {
-            new Main(System.in, "\nValore non valido!\n") {
+            new InputHandler(System.in, "\nValore non valido!\n") {
                 @Override
                 public boolean run(Scanner scan) throws Exception {
                     Arrays.asList(AbstractFigure.Solid.values()).forEach(solid -> System.out.printf("%s ", solid.name()));
@@ -43,28 +41,4 @@ public abstract class Main {
         } while(repeat);
     }
 
-
-    private InputStream input;
-    private String errorMessage;
-
-    public Main(InputStream input, String errorMessage){
-        this.input = input;
-        this.errorMessage = errorMessage;
-    }
-
-    public void execute(){
-
-            for(boolean done = false; !done;) {
-                try{
-                    Thread.sleep(20);
-                    if(!(done = run(new Scanner(input))))
-                        System.err.println(errorMessage);
-                } catch (Exception e){
-                    done = false;
-                    System.err.println(errorMessage);
-                }
-            }
-    }
-
-    public abstract boolean run(Scanner scan) throws Exception;
 }

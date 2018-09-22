@@ -1,9 +1,10 @@
 package io.github.dave5080.figure;
 
-import io.github.dave5080.Main;
+import io.github.dave5080.InputHandler;
 
 import java.util.Scanner;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class Sphere extends AbstractFigure{
 
     private double range;
@@ -25,7 +26,7 @@ public class Sphere extends AbstractFigure{
 
     @Override
     public void scanForInfo(Scanner scan) {
-        new Main(System.in, "\nValore non valido!\n") {
+        new InputHandler(System.in, "\nValore non valido!\n") {
             @Override
             public boolean run(Scanner scan) throws Exception {
                 range = readValue(scan, "Inserire il raggio: ");

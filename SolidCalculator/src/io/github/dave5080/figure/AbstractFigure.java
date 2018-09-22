@@ -1,5 +1,6 @@
 package io.github.dave5080.figure;
 
+import io.github.dave5080.InputHandler;
 import io.github.dave5080.Main;
 
 import java.util.Scanner;
@@ -67,7 +68,7 @@ public abstract class AbstractFigure {
 
             @Override
             public void getInfo(Scanner scan) {
-                new Main(System.in, "\nValore non valido!\n") {
+                new InputHandler(System.in, "\nValore non valido!\n") {
                     @Override
                     public boolean run(Scanner scan) throws Exception {
                         base = readValue(scan, "Inserire la base: ");
@@ -97,7 +98,7 @@ public abstract class AbstractFigure {
 
             @Override
             public void getInfo(Scanner scan) {
-                new Main(System.in, "\nRaggio non valido\n") {
+                new InputHandler(System.in, "\nRaggio non valido\n") {
                     @Override
                     public boolean run(Scanner scan) throws Exception {
                         range = readValue(scan, "Inserire il raggio: ");
@@ -129,7 +130,7 @@ public abstract class AbstractFigure {
 
             @Override
             public void getInfo(Scanner scan) {
-                new Main(System.in, "\nValore non valido!\n") {
+                new InputHandler(System.in, "\nValore non valido!\n") {
                     @Override
                     public boolean run(Scanner scan) throws Exception {
                         System.out.print("Inserire il numero di lati: ");
@@ -167,8 +168,6 @@ public abstract class AbstractFigure {
             return shape;
         }
     }
-
-
 
     public abstract double getVolume();
     public abstract double getLateralArea() throws Exception;
