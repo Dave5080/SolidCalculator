@@ -10,7 +10,7 @@ public interface Validator<T> {
     /**
      * Implementing this method it'll be specified what to do in order to
      * check a {@link T} validity.
-     * @param value This is the T type object to validate
+     * @param value This is the {@link T} type object to validate
      * @return true if the value is valid, false otherwise.
      */
     boolean isValid(T value);

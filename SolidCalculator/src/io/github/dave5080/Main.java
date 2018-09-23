@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * This is just an example of how to implement everything.
  */
-public class Main {
+public abstract class Main {
 
     /**
      * The main inputHandler passed through almost all the program
