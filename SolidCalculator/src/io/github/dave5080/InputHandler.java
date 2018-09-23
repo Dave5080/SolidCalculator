@@ -44,7 +44,7 @@ public class InputHandler {
     /**
      * Simpler version of {@link #readValue(Scanner, String, String, Validator)}
      */
-    public static double readValue(Scanner scan, String request, @Nullable String error){
+    public static double readValue(Scanner scan, String request, @Nullable String error) throws IllegalArgumentException{
         return readValue(scan, request, error, null);
     }
 
@@ -52,12 +52,21 @@ public class InputHandler {
      * Simpler version of {@link #readValue(Scanner, String, String)}, it does not require an error message.
      * @see #readValue(Scanner, String, String)
      */
-    public static double readValue(Scanner scan, String request){
+    public static double readValue(Scanner scan, String request) throws IllegalArgumentException{
         return readValue(scan, request, null);
     }
 
+    /**
+     * The stream which this {@link InputHandler} will read data from
+     */
     private InputStream input;
+    /**
+     * The stream wicth this {@link InputHandler} will promt error to
+     */
     private PrintStream error;
+    /**
+     * The message promped trough {@link #error}
+     */
     private String errorMessage;
 
     /**
@@ -85,18 +94,16 @@ public class InputHandler {
 
     /**
      * This is the access point of the input phase, call this method to instantiate it.
+     * This method is designed for handling 2 types of error that can occur form the input sentences:
+     *
+     *  - If the DataReader#run() method returns false we accomplish that the default error occurred.
+     *  - To print out errors of any other form the run() method'll throw back any kind of Exception
      * @param reader Is the instance containing the {@link DataReader#run(Scanner)} method
      *               called to read data
      */
     public void execute(DataReader reader) {
-        /* This method is designed for handling 2 types of error that can occur form the input sentences:
-         *
-         *  - If the DataReader#run() method returns false we accomplish that the default error occurred.
-         *  - To print out errors of any other form the run() method'll throw back any kind of Exception
-         */
         for (boolean done = false; !done; ) {
             try {
-                //Thread.sleep(20);
                 if (!(done = reader.run(new Scanner(input))) && error != null)
                     error.println(errorMessage);
             } catch (Exception e) {

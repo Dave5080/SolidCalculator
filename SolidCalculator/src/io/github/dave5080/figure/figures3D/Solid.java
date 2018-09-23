@@ -11,6 +11,9 @@ public enum Solid{
     PYRAMID(Pyramid.class),
     SPHERE(Sphere.class);
 
+    /**
+     * The class implementing {@link AbstractSolid} with the details of each {@link Solid}
+     */
     private Class<? extends AbstractSolid> solidClass;
 
     /**

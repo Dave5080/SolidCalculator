@@ -10,9 +10,15 @@ import java.util.Scanner;
 import static io.github.dave5080.InputHandler.readValue;
 
 @SuppressWarnings({"SpellCheckingInspection", "RedundantThrows"})
-public class Pyramid extends AbstractSolid {
+public class Pyramid implements AbstractSolid {
 
+    /**
+     * Stores Solid's height
+     */
     private double height;
+    /**
+     * Indentify the Solid's base shape
+     */
     private AbstractShape abstractShape;
 
     /**
@@ -29,7 +35,7 @@ public class Pyramid extends AbstractSolid {
      */
     @Override
     public double getLateralArea() throws IllegalAccessException {
-        return abstractShape.getPerimeter()* (pitagor(abstractShape.getApothem(), height)/2);
+        return abstractShape.getPerimeter()* (AbstractSolid.pitagor(abstractShape.getApothem(), height)/2);
     }
 
     /**

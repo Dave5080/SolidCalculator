@@ -10,9 +10,15 @@ import java.util.Scanner;
 import static io.github.dave5080.InputHandler.readValue;
 
 @SuppressWarnings({"SpellCheckingInspection", "RedundantThrows"})
-public class Prism extends AbstractSolid {
+public class Prism implements AbstractSolid {
 
+    /**
+     * Stores Solid's height
+     */
     private double height;
+    /**
+     * Indentify the Solid's base shape
+     */
     private AbstractShape abstractShape;
 
     /**

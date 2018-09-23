@@ -7,13 +7,26 @@ import io.github.dave5080.figure.figures3D.Sphere;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * The main class of this example program. Will just implement all of
+ * the stuff by using {@link System#in} and {@link System#err} streams
+ *
+ * This is just an example of how to implement everything.
+ */
 public abstract class Main {
 
+    /**
+     * The main inputHandler passed through almost all the program
+     */
     private static InputHandler inputHandler;
 
+    /**
+     * @return {@link #inputHandler}
+     */
     public static InputHandler getInputHandler(){
         return inputHandler;
     }
+
     @SuppressWarnings("SpellCheckingInspection")
     public static void main(String... args) {
         inputHandler = new InputHandler(System.in, System.err, "Valore non valido!");

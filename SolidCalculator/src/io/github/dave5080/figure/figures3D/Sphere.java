@@ -8,8 +8,11 @@ import static io.github.dave5080.InputHandler.readValue;
 import static java.lang.Math.PI;
 
 @SuppressWarnings({"SpellCheckingInspection", "RedundantThrows"})
-public class Sphere extends AbstractSolid {
+public class Sphere implements AbstractSolid {
 
+    /**
+     * The sphere's range lenght
+     */
     private double range;
 
     /**

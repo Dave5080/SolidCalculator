@@ -11,12 +11,22 @@ public enum Shapes{
     CIRCLE(Circle.class),
     REGULAR_FIGURE(RegularFigure.class);
 
+    /**
+     * The class implementing {@link AbstractShape} with the details of each {@link Shapes}
+     */
     private Class<? extends AbstractShape> shapeClass;
 
+    /**
+     * This simple constructor link a {@link Shapes} record with an {@link AbstractShape} class implementation
+     * @param shapeClass The implemented class of the figure witch defines all his details
+     */
     Shapes(Class<? extends AbstractShape> shapeClass) {
         this.shapeClass = shapeClass;
     }
 
+    /**
+     * @return A new instance of the Shape
+     */
     public AbstractShape getShape(){
         try {
             return shapeClass.getConstructor().newInstance();
