@@ -15,24 +15,37 @@ import java.util.Scanner;
 @SuppressWarnings({"SpellCheckingInspection", "unused", "WeakerAccess"})
 public class InputHandler {
 
-
     /**
      * Mostly used to read values while implementing an {@link InputHandler}
      * @param scan      is the way used to read input doubles
      * @param request   is the prompt sent to users to requesting an input
      * @param error     is the error message threw back to {@link InputHandler#execute(DataReader)}
+     * @param validator if it's not null it defines its own condition to validate the input
      * @return          It returns the read value.
      * @throws IllegalArgumentException It's threw to
      *                                  {@link InputHandler#execute(DataReader)} whenever the input it's not valid
      */
-    public static double readValue(Scanner scan, String request, @Nullable String error) throws IllegalArgumentException {
+    public static double readValue(Scanner scan,
+                                   String request,
+                                   @Nullable String error,
+                                   @Nullable Validator<Double> validator) throws IllegalArgumentException
+    {
         System.out.print(request);
         double value = scan.nextDouble();
-        if(value > 0)
+        if(validator != null && validator.isValid(value))
+            return value;
+        else if(value > 0)
             return value;
         else if(error == null)
             throw new IllegalArgumentException();
         else throw new IllegalArgumentException(error);
+    }
+
+    /**
+     * Simpler version of {@link #readValue(Scanner, String, String, Validator)}
+     */
+    public static double readValue(Scanner scan, String request, @Nullable String error){
+        return readValue(scan, request, error, null);
     }
 
     /**

@@ -1,13 +1,15 @@
 package io.github.dave5080.figure.figures2D;
 
 import io.github.dave5080.figure.AbstractShape;
-import io.github.dave5080.figure.AbstractSolid;
 
+/**
+ * This enumeration lists the Flat Figures and it's an easy way to get instances of those.
+ */
 public enum Shapes{
 
     RECTANGLE(Rectangle.class),
     CIRCLE(Circle.class),
-    FIGURE(RegularFigure.class);
+    REGULAR_FIGURE(RegularFigure.class);
 
     private Class<? extends AbstractShape> shapeClass;
 

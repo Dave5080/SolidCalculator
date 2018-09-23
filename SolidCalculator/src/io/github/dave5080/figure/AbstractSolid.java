@@ -5,8 +5,6 @@ import io.github.dave5080.figure.figures3D.Prism;
 import io.github.dave5080.figure.figures3D.Pyramid;
 import io.github.dave5080.figure.figures3D.Sphere;
 
-import java.util.Scanner;
-
 /**
  * An {@link RegularFigure} is the abstract form of any solid implementable
  * There are 2 subcategories of Solid Figures:
@@ -27,8 +25,20 @@ public abstract class AbstractSolid implements DataReader {
         return (Math.sqrt(Math.pow(c1,2)+Math.pow(c2,2)));
     }
 
+    /**
+     * @return the volume of the solid.
+     */
     public abstract double getVolume();
+
+    /**
+     * @return the lateral area of the solid
+     * @throws Exception when the solid has not a lateral area (i.e. {@link Sphere}
+     */
     public abstract double getLateralArea() throws Exception;
-    public abstract double getTotalArea() throws Exception;
+
+    /**
+     * @return the total area of the solid.
+     */
+    public abstract double getTotalArea() throws IllegalAccessException;
 
 }

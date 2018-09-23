@@ -24,7 +24,7 @@ public abstract class Main {
                 System.out.print("\nInserire il solido desiderato: ");
                 AbstractSolid figure = Solid.valueOf(scan.nextLine().toUpperCase()).getSolid();
                 if (figure != null) {
-
+                    inputHandler.execute(figure);
                     if (figure instanceof Sphere)
                         System.out.printf("%nSuperficie: %s%nVolume: %s%n%n",
                                 figure.getTotalArea(),

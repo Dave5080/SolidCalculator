@@ -15,10 +15,10 @@ public enum Solid{
 
     /**
      * This simple constructor link a {@link Solid} record with an {@link AbstractSolid} class implementation
-     * @param c The implemented class of the figure witch defines all his details
+     * @param solidClass The implemented class of the figure witch defines all his details
      */
-    Solid(Class<? extends AbstractSolid> c){
-        this.solidClass = c;
+    Solid(Class<? extends AbstractSolid> solidClass){
+        this.solidClass = solidClass;
     }
 
     /**

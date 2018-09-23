@@ -1,6 +1,5 @@
 package io.github.dave5080.figure.figures3D;
 
-import io.github.dave5080.InputHandler;
 import io.github.dave5080.Main;
 import io.github.dave5080.figure.*;
 import io.github.dave5080.figure.figures2D.Shapes;
@@ -14,23 +13,39 @@ import static io.github.dave5080.InputHandler.readValue;
 public class Pyramid extends AbstractSolid {
 
     private double height;
-    private AbstractShape AbstractShape;
+    private AbstractShape abstractShape;
 
+    /**
+     * Volume = Base's Area * Solid's Height / 3
+     * See {@link AbstractSolid#getVolume()}
+     */
     @Override
     public double getVolume() {
-        return (AbstractShape.getArea()*height)*3;
+        return (abstractShape.getArea()*height)/3;
     }
 
+    /**
+     * See {@link AbstractSolid#getLateralArea()}
+     */
     @Override
-    public double getLateralArea() throws Exception {
-        return AbstractShape.getPerimeter()* AbstractShape.getApothem()/2;
+    public double getLateralArea() throws IllegalAccessException {
+        return abstractShape.getPerimeter()* (pitagor(abstractShape.getApothem(), height)/2);
     }
 
+    /**
+     * Total Area = Base's Area * Solid's Lateral Area
+     * See {@link AbstractSolid#getTotalArea()}
+     */
     @Override
-    public double getTotalArea() throws Exception {
-        return getLateralArea()+ AbstractShape.getArea();
+    public double getTotalArea() throws IllegalAccessException {
+        return getLateralArea()+ abstractShape.getArea();
     }
 
+    /**
+     * Used to read the Solid's height and the Base shape's info
+     * @see io.github.dave5080.DataReader
+     * @see io.github.dave5080.InputHandler
+     */
     public boolean run(Scanner scan) throws Exception {
         Arrays.stream(Shapes.values())
                 .filter(x -> !x.name().equals("RECTANGLE"))
@@ -39,9 +54,9 @@ public class Pyramid extends AbstractSolid {
         Shapes aShape = Shapes.valueOf(scan.nextLine().toUpperCase());
         if(aShape.equals(Shapes.RECTANGLE))
             return false;
-        AbstractShape = aShape.getShape();
-        if(AbstractShape != null){
-            Main.getInputHandler().execute(this.AbstractShape);
+        abstractShape = aShape.getShape();
+        if(abstractShape != null){
+            Main.getInputHandler().execute(this.abstractShape);
             height = readValue(scan, "Inserire l'altezza della piramide: ");
             return true;
         }

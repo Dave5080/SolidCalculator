@@ -4,9 +4,10 @@ import io.github.dave5080.figure.AbstractShape;
 
 import java.util.Scanner;
 
+import static io.github.dave5080.InputHandler.readValue;
 import static java.lang.Math.PI;
 
-@SuppressWarnings("RedundantThrows")
+@SuppressWarnings({"RedundantThrows", "SpellCheckingInspection"})
 public class Circle extends AbstractShape {
     private double range;
     @Override
@@ -26,6 +27,7 @@ public class Circle extends AbstractShape {
 
     @Override
     public boolean run(Scanner scan) throws Exception {
-        return false;
+        readValue(scan, "Inserire il raggio del cerchio: ");
+        return true;
     }
 }

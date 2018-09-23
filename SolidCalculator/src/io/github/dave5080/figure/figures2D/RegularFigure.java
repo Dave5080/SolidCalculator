@@ -35,11 +35,11 @@ public class RegularFigure extends AbstractShape implements DataReader{
             return fixedNumber*side;
     }
 
-    public boolean run(Scanner scan) throws Exception {
-        System.out.print("Inserire il numero di lati: ");
-        sideNumber = scan.nextInt();
-        if(sideNumber <= 0)
-            throw new Exception();
+    public boolean run(Scanner scan) throws IllegalArgumentException {
+        sideNumber = (int) readValue(scan,
+                "Inserire il numero di lati: ",
+                "Numero di lati non valido!",
+                value -> value >=4);
         side = readValue(scan, "Inserire il lato: ");
         apothem = getApothem();
         return true;

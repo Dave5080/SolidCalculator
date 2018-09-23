@@ -4,7 +4,9 @@ import io.github.dave5080.figure.AbstractShape;
 
 import java.util.Scanner;
 
-@SuppressWarnings("RedundantThrows")
+import static io.github.dave5080.InputHandler.readValue;
+
+@SuppressWarnings({"RedundantThrows", "SpellCheckingInspection"})
 public class Rectangle extends AbstractShape {
 
     private double base;
@@ -21,12 +23,16 @@ public class Rectangle extends AbstractShape {
     }
 
     @Override
-    public double getApothem() throws Exception {
-        throw new Exception();
+    public double getApothem() throws IllegalAccessException {
+        if(base == height)
+            return base/2;
+        throw new IllegalAccessException("Un rettangolo non può avere un'apotema!");
     }
 
     @Override
     public boolean run(Scanner scan) throws Exception {
-        return false;
+        base = readValue(scan, "Inserire la base: ");
+        height = readValue(scan, "Inserire l'altezza: ");
+        return true;
     }
 }
