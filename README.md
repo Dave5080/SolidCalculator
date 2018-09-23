@@ -1,2 +1,1 @@
-# SolidCalculator
-a simple 3d solids calculator
+<a href="SolidCalculator/docs/index.html">docs</a>
