@@ -1,6 +1,6 @@
 package io.github.dave5080.figure.figures2D;
 
-import io.github.dave5080.figure.AbstractShape;
+import io.github.dave5080.figure.IAbstractShape;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ import static io.github.dave5080.InputHandler.readValue;
 import static java.lang.Math.PI;
 
 @SuppressWarnings({"RedundantThrows", "SpellCheckingInspection"})
-public class Circle implements AbstractShape {
+public class Circle implements IAbstractShape {
 
     /**
      * The range lenght of the circle.
@@ -16,7 +16,7 @@ public class Circle implements AbstractShape {
     private double range;
 
     /**
-     * See {@link AbstractShape#getArea()}
+     * See {@link IAbstractShape#getArea()}
      */
     @Override
     public double getArea() {
@@ -24,7 +24,7 @@ public class Circle implements AbstractShape {
     }
 
     /**
-     * See {@link AbstractShape#getPerimeter()}
+     * See {@link IAbstractShape#getPerimeter()}
      */
     @Override
     public double getPerimeter() {
@@ -32,7 +32,7 @@ public class Circle implements AbstractShape {
     }
 
     /**
-     * See {@link AbstractShape#getApothem()}
+     * See {@link IAbstractShape#getApothem()}
      */
     @Override
     public double getApothem() {

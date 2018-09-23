@@ -1,6 +1,6 @@
 package io.github.dave5080.figure.figures2D;
 
-import io.github.dave5080.figure.AbstractShape;
+import io.github.dave5080.figure.IAbstractShape;
 
 /**
  * This enumeration lists the Flat Figures and it's an easy way to get instances of those.
@@ -12,22 +12,22 @@ public enum Shapes{
     REGULAR_FIGURE(RegularFigure.class);
 
     /**
-     * The class implementing {@link AbstractShape} with the details of each {@link Shapes}
+     * The class implementing {@link IAbstractShape} with the details of each {@link Shapes}
      */
-    private Class<? extends AbstractShape> shapeClass;
+    private Class<? extends IAbstractShape> shapeClass;
 
     /**
-     * This simple constructor link a {@link Shapes} record with an {@link AbstractShape} class implementation
+     * This simple constructor link a {@link Shapes} record with an {@link IAbstractShape} class implementation
      * @param shapeClass The implemented class of the figure witch defines all his details
      */
-    Shapes(Class<? extends AbstractShape> shapeClass) {
+    Shapes(Class<? extends IAbstractShape> shapeClass) {
         this.shapeClass = shapeClass;
     }
 
     /**
      * @return A new instance of the Shape
      */
-    public AbstractShape getShape(){
+    public IAbstractShape getShape(){
         try {
             return shapeClass.getConstructor().newInstance();
         } catch (Exception e) { e.printStackTrace(); }

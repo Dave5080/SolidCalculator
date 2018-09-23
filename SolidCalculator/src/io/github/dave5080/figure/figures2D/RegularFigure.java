@@ -1,14 +1,13 @@
 package io.github.dave5080.figure.figures2D;
 
-import io.github.dave5080.DataReader;
-import io.github.dave5080.figure.AbstractShape;
+import io.github.dave5080.figure.IAbstractShape;
 
 import java.util.Scanner;
 
 import static io.github.dave5080.InputHandler.readValue;
 
 @SuppressWarnings({"SpellCheckingInspection"})
-public class RegularFigure implements AbstractShape{
+public class RegularFigure implements IAbstractShape {
 
     /**
      * An array containing all fixed numbers of the Regular Figures with 4-12 sides.
@@ -32,7 +31,7 @@ public class RegularFigure implements AbstractShape{
     private double fixedNumber = 0;
 
     /**
-     * See {@link AbstractShape#getArea()}
+     * See {@link IAbstractShape#getArea()}
      */
     @Override
     public double getArea() {
@@ -40,7 +39,7 @@ public class RegularFigure implements AbstractShape{
     }
 
     /**
-     * See {@link AbstractShape#getPerimeter()}
+     * See {@link IAbstractShape#getPerimeter()}
      */
     @Override
     public double getPerimeter() {
@@ -48,7 +47,7 @@ public class RegularFigure implements AbstractShape{
     }
 
     /**
-     * See {@link AbstractShape#getApothem()}
+     * See {@link IAbstractShape#getApothem()}
      */
     @Override
     public double getApothem() {
