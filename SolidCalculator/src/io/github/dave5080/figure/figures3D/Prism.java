@@ -10,7 +10,7 @@ import java.util.Scanner;
 import static io.github.dave5080.InputHandler.readValue;
 
 @SuppressWarnings({"SpellCheckingInspection", "RedundantThrows"})
-public class Prism implements AbstractSolid {
+public class Prism implements IAbstractSolid {
 
     /**
      * Stores Solid's height
@@ -19,33 +19,33 @@ public class Prism implements AbstractSolid {
     /**
      * Indentify the Solid's base shape
      */
-    private AbstractShape abstractShape;
+    private IAbstractShape IAbstractShape;
 
     /**
      * Volume = Base's Area * Solid's Height
-     * See {@link AbstractSolid#getVolume()}
+     * See {@link IAbstractSolid#getVolume()}
      */
     @Override
     public double getVolume() {
-        return abstractShape.getArea() * height;
+        return IAbstractShape.getArea() * height;
     }
 
     /**
      * Lateral Area = Bas's Perimeter * Solid's Height
-     * See {@link AbstractSolid#getLateralArea()}
+     * See {@link IAbstractSolid#getLateralArea()}
      */
     @Override
     public double getLateralArea() {
-        return abstractShape.getPerimeter() * height;
+        return IAbstractShape.getPerimeter() * height;
     }
 
     /**
      * TotalArea = 2 * Base's Area + Solid's Lateral Area
-     * See {@link AbstractSolid#getTotalArea()}
+     * See {@link IAbstractSolid#getTotalArea()}
      */
     @Override
     public double getTotalArea() {
-        return getLateralArea() + (abstractShape.getArea() * 2);
+        return getLateralArea() + (IAbstractShape.getArea() * 2);
     }
 
     /**
@@ -56,9 +56,9 @@ public class Prism implements AbstractSolid {
     public boolean run(Scanner scan) throws Exception {
         Arrays.asList(Shapes.values()).forEach(figure -> System.out.printf("%s ",figure.name()));
         System.out.print("\nInserire la figura di base: ");
-        abstractShape = Shapes.valueOf(scan.nextLine().toUpperCase()).getShape();
-        if(abstractShape != null){
-            Main.getInputHandler().execute(abstractShape);
+        IAbstractShape = Shapes.valueOf(scan.nextLine().toUpperCase()).getShape();
+        if(IAbstractShape != null){
+            Main.getInputHandler().execute(IAbstractShape);
             height = readValue(scan, "Inserire l'altezza del prisma: ");
             return true;
         }

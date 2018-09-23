@@ -10,7 +10,7 @@ import java.util.Scanner;
 import static io.github.dave5080.InputHandler.readValue;
 
 @SuppressWarnings({"SpellCheckingInspection", "RedundantThrows"})
-public class Pyramid implements AbstractSolid {
+public class Pyramid implements IAbstractSolid {
 
     /**
      * Stores Solid's height
@@ -19,32 +19,32 @@ public class Pyramid implements AbstractSolid {
     /**
      * Indentify the Solid's base shape
      */
-    private AbstractShape abstractShape;
+    private IAbstractShape IAbstractShape;
 
     /**
      * Volume = Base's Area * Solid's Height / 3
-     * See {@link AbstractSolid#getVolume()}
+     * See {@link IAbstractSolid#getVolume()}
      */
     @Override
     public double getVolume() {
-        return (abstractShape.getArea()*height)/3;
+        return (IAbstractShape.getArea()*height)/3;
     }
 
     /**
-     * See {@link AbstractSolid#getLateralArea()}
+     * See {@link IAbstractSolid#getLateralArea()}
      */
     @Override
     public double getLateralArea() throws IllegalAccessException {
-        return abstractShape.getPerimeter()* (AbstractSolid.pitagor(abstractShape.getApothem(), height)/2);
+        return IAbstractShape.getPerimeter()* (IAbstractSolid.pitagor(IAbstractShape.getApothem(), height)/2);
     }
 
     /**
      * Total Area = Base's Area * Solid's Lateral Area
-     * See {@link AbstractSolid#getTotalArea()}
+     * See {@link IAbstractSolid#getTotalArea()}
      */
     @Override
     public double getTotalArea() throws IllegalAccessException {
-        return getLateralArea()+ abstractShape.getArea();
+        return getLateralArea()+ IAbstractShape.getArea();
     }
 
     /**
@@ -60,9 +60,9 @@ public class Pyramid implements AbstractSolid {
         Shapes aShape = Shapes.valueOf(scan.nextLine().toUpperCase());
         if(aShape.equals(Shapes.RECTANGLE))
             return false;
-        abstractShape = aShape.getShape();
-        if(abstractShape != null){
-            Main.getInputHandler().execute(this.abstractShape);
+        IAbstractShape = aShape.getShape();
+        if(IAbstractShape != null){
+            Main.getInputHandler().execute(this.IAbstractShape);
             height = readValue(scan, "Inserire l'altezza della piramide: ");
             return true;
         }

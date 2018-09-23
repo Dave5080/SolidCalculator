@@ -1,6 +1,6 @@
 package io.github.dave5080.figure.figures3D;
 
-import io.github.dave5080.figure.AbstractSolid;
+import io.github.dave5080.figure.IAbstractSolid;
 
 /**
  * This enumeration lists the Solid Figures Families and creates new instances
@@ -12,22 +12,22 @@ public enum Solid{
     SPHERE(Sphere.class);
 
     /**
-     * The class implementing {@link AbstractSolid} with the details of each {@link Solid}
+     * The class implementing {@link IAbstractSolid} with the details of each {@link Solid}
      */
-    private Class<? extends AbstractSolid> solidClass;
+    private Class<? extends IAbstractSolid> solidClass;
 
     /**
-     * This simple constructor link a {@link Solid} record with an {@link AbstractSolid} class implementation
+     * This simple constructor link a {@link Solid} record with an {@link IAbstractSolid} class implementation
      * @param solidClass The implemented class of the figure witch defines all his details
      */
-    Solid(Class<? extends AbstractSolid> solidClass){
+    Solid(Class<? extends IAbstractSolid> solidClass){
         this.solidClass = solidClass;
     }
 
     /**
      * @return A new instance of the Solid
      */
-    public AbstractSolid getSolid(){
+    public IAbstractSolid getSolid(){
         try {
             return solidClass.getConstructor().newInstance();
         } catch (Exception e) { e.printStackTrace(); }

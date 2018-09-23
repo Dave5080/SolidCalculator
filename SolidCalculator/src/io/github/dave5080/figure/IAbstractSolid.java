@@ -13,7 +13,7 @@ import io.github.dave5080.figure.figures3D.Sphere;
  * - Solid built only by shapes like the {@link Sphere}
  */
 @SuppressWarnings("ALL")
-public interface AbstractSolid extends DataReader {
+public interface IAbstractSolid extends DataReader {
 
     /**
      * Just a simple math implementation of the Pitagor's theory

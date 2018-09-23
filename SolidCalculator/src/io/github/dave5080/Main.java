@@ -1,6 +1,6 @@
 package io.github.dave5080;
 
-import io.github.dave5080.figure.AbstractSolid;
+import io.github.dave5080.figure.IAbstractSolid;
 import io.github.dave5080.figure.figures3D.Solid;
 import io.github.dave5080.figure.figures3D.Sphere;
 
@@ -35,7 +35,7 @@ public abstract class Main {
             inputHandler.execute(scan -> {
                 Arrays.asList(Solid.values()).forEach(solid -> System.out.printf("%s ", solid.name()));
                 System.out.print("\nInserire il solido desiderato: ");
-                AbstractSolid figure = Solid.valueOf(scan.nextLine().toUpperCase()).getSolid();
+                IAbstractSolid figure = Solid.valueOf(scan.nextLine().toUpperCase()).getSolid();
                 if (figure != null) {
                     inputHandler.execute(figure);
                     if (figure instanceof Sphere)

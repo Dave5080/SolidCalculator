@@ -1,13 +1,13 @@
 package io.github.dave5080.figure.figures2D;
 
-import io.github.dave5080.figure.AbstractShape;
+import io.github.dave5080.figure.IAbstractShape;
 
 import java.util.Scanner;
 
 import static io.github.dave5080.InputHandler.readValue;
 
 @SuppressWarnings({"RedundantThrows", "SpellCheckingInspection"})
-public class Rectangle implements AbstractShape {
+public class Rectangle implements IAbstractShape {
 
     /**
      * The base lenght of the rectangle
@@ -19,7 +19,7 @@ public class Rectangle implements AbstractShape {
     private double height;
 
     /**
-     * See {@link AbstractShape#getArea()}
+     * See {@link IAbstractShape#getArea()}
      */
     @Override
     public double getArea() {
@@ -27,7 +27,7 @@ public class Rectangle implements AbstractShape {
     }
 
     /**
-     * See {@link AbstractShape#getPerimeter()}
+     * See {@link IAbstractShape#getPerimeter()}
      */
     @Override
     public double getPerimeter() {
@@ -35,7 +35,7 @@ public class Rectangle implements AbstractShape {
     }
 
     /**
-     * See {@link AbstractShape#getApothem()}
+     * See {@link IAbstractShape#getApothem()}
      */
     @Override
     public double getApothem() throws IllegalAccessException {

@@ -8,7 +8,7 @@ import static io.github.dave5080.InputHandler.readValue;
 import static java.lang.Math.PI;
 
 @SuppressWarnings({"SpellCheckingInspection", "RedundantThrows"})
-public class Sphere implements AbstractSolid {
+public class Sphere implements IAbstractSolid {
 
     /**
      * The sphere's range lenght
@@ -16,7 +16,7 @@ public class Sphere implements AbstractSolid {
     private double range;
 
     /**
-     * See {@link AbstractSolid#getVolume()}
+     * See {@link IAbstractSolid#getVolume()}
      */
     @Override
     public double getVolume() {
@@ -24,7 +24,7 @@ public class Sphere implements AbstractSolid {
     }
 
     /**
-     * See {@link AbstractSolid#getLateralArea()}
+     * See {@link IAbstractSolid#getLateralArea()}
      */
     @Override
     public double getLateralArea() {
@@ -32,7 +32,7 @@ public class Sphere implements AbstractSolid {
     }
 
     /**
-     * See {@link AbstractSolid#getTotalArea()}
+     * See {@link IAbstractSolid#getTotalArea()}
      */
     @Override
     public double getTotalArea() {
